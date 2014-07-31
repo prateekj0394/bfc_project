@@ -1,0 +1,25 @@
+nav
+{
+	background: #333!important;
+	box-shadow: 0 0 100px rgba(0,0,0,1);
+}
+ul.title-area li.name h1 a
+{
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+ul.right li a
+{
+	font-size: 25px;
+	letter-spacing: 1px;
+	width:250px;
+	text-align:right;
+	background: #333;
+}
+
+nav ul li a:hover
+{
+	color: white;
+	background: #00abcd!important;
+}

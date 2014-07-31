@@ -1,0 +1,14 @@
+#homeDiv
+{
+	background: brown;
+}
+
+#homeDiv *
+{
+	color: #111;
+}
+#homeDiv *::after
+{
+	color: white;
+	border-color: white;
+}

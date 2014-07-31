@@ -1,0 +1,14 @@
+#aboutUsDiv
+{
+	background:#a6a;
+}
+
+#aboutUsDiv *
+{
+	color: #111;
+}
+#aboutUsDiv *::after
+{
+	color: white;
+	border-color: white;
+}
