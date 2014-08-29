@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>BITS Firefox Community</title>
 		<link rel="stylesheet" href="css/main.css">
-		<script src="js/jq171.js"></script>
+		<script src="js/jquery11.js"></script>
 	</head>
 	<body>
 		<div id="right">
@@ -16,21 +16,51 @@
 					<li id="about">About Us</li>
 					<li id="contact">Contact Us</li>
 				</ul>
+
 			</div>
 			<div id="content"></div>
+
 			<div id="bottom">
 				<div>
-					<p>NEWSLETTER</p>
 					<form>
+						<label>NEWSLETTER</label>
 						<input type="email" required>
 						<input type="submit" value="Register">
 					</form>
 				</div>
 			</div>
+
+			<button style="font-size:60px;position:absolute;bottom:60px;			width:60px;line-height:60px" id="toleft">&raquo;</button>
+		</div>
+
+		<div id="left">
+			<h1>THIS IS THE DARK SIDE</h1>
+			<button style="font-size:60px;position:absolute;top:60px;right:0;	width:60px;line-height:60px" id="toright">&laquo;</button>
 		</div>
 		<script>
-			$(window).ready(function(){$('#content').load('contact.txt');});
+			$(window).load(function(){$('#content').load('contact.txt');});
 			$('#home').click(function(){$('#content').load('home.txt');});
+			$('#contact').click(function(){$('#content').load('contact.txt');});
+			$('#toleft').click(function()
+			{
+				$('#left').css('opacity','1');
+				$('#left').css('transform','translate3d(0,0,0)');
+				$('#left').css('transition',' opacity .25s, transform .5s');
+				$('#left').css('z-index','1');
+				$('#right').css('opacity','0');
+				$('#right').css('transform','translate3d(10%,0,0)');
+				$('#right').css('transition',' opacity .25s, transform .5s');
+				$('#right').css('z-index','-1');
+			});
+			$('#toright').click(function()
+			{
+				$('#left').css('opacity','0');
+				$('#left').css('transform','translate3d(-10%,0,0)');
+				$('#left').css('z-index','-1');
+				$('#right').css('opacity','1');
+				$('#right').css('transform','translate3d(0,0,0)');
+				$('#right').css('z-index','1');
+			});
 		</script>
 	</body>
 </html>
