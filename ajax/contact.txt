@@ -1,4 +1,5 @@
 <div id="contact">
+	<h1>Contact Us for anything</h1>
 	<div id="lefthalf">
 		<div id="row">
 			<img src="img/1 (1).jpg">

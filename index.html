@@ -8,88 +8,64 @@
 		<link rel="stylesheet" href="css/slider.css">
 		<script src="js/jquery11.js"></script>
 		<style type="text/css">
-		div#right,
-		div#left,
-		body
+		div#section
 		{
 			background:url('img/back.png') top center fixed;
 		}
-		div#top
-		{
-			/*background: white;*/
-		}
-		div#top ul li	{background: url('img/tab.png')center/100% 100% no-repeat;}
+		div#nav ul li	{background: url('img/tab.png')center/100% 100% no-repeat;}
 
 		</style>
 	</head>
 	<body>
 
-		<div id="right">
-			<div id="top">
-				<span><img src="img/logo.png" style="">BITS Firefox Community</span>
+	<div id="header">
+		<img src="img/logo.png" style=""><h1>BITS Firefox Community</h1><p style="clear:both" />
+	</div><!--header end-->
+	<div id="section">
+		<div id="main">
+			<div id="nav">
 				<ul>
 					<li id="home">Home</li><!--
-			--> <li id="kidz">Kidzilla</li><!--
-			--> <li id="about">About Us</li><!--
-			--> <li id="contact">Contact Us</li>
+			 --><li id="kidz">Kidzilla</li><!--
+			 --><li id="about">About Us</li><!--
+			 --><li id="contact">Contact Us</li>
 				</ul>
-				<p style="clear:both;"/>
-			</div>
-			<div id="content"></div>
-
-			<div id="bottom">
-				<div>
-					<form>
-						<label>NEWSLETTER</label>
-						<input type="email" required>
-						<input type="submit" value="Register">
-					</form>
-				</div>
-			</div>
-
-			<button id="toleft">&raquo;</button>
-		</div>
-
-		<div id="left">
+			</div><!--nav end-->
+			<div id="content"></div><!--content end-->
+			<button id="toextra">&raquo;</button>
+			<div id="footer">
+				<form>
+					<label>NEWSLETTER</label>
+					<input type="email" required>
+					<input type="submit" value="Register">
+				</form>
+			</div><!--footer end-->
+		</div><!--main end-->
+		<div id="extra">
 			<h1>THIS IS THE DARK SIDE</h1>
-			<button id="toright">&laquo;</button>
-		</div>
+			<button id="tomain">&laquo;</button>
+		</div><!--extra end-->
+	</div><!--section end-->
+
+
+
+			<!--  -->
+
+		<!-- <div id="extra"> -->
+			<!--  -->
 
 
 
 
 
-		<script>
-			$(window).load(function(){$('#content').load('ajax\\home.txt');});
-			$('#home').click(function(){$('#content').load('ajax\\home.txt');});
-			$('#contact').click(function(){$('#content').load('ajax\\contact.txt');});
-			$('#toleft').click(function()
-			{
-				$('#left *').css('opacity','1');
-				$('#left').css('transform','translate3d(0,0,0)');
-				$('#left').css('transition',' opacity .25s, transform .5s');
-				$('#left').css('z-index','1');
-				$('#right *').css('opacity','0');
-				$('#right').css('transform','translate3d(10%,0,0)');
-				$('#right').css('transition',' opacity .25s, transform .5s');
-				$('#right').css('z-index','-1');
-			});
-			$('#toright').click(function()
-			{
-				$('#left *').css('opacity','0');
-				$('#left').css('transform','translate3d(-10%,0,0)');
-				$('#left').css('z-index','-1');
-				$('#right *').css('opacity','1');
-				$('#right').css('transform','translate3d(0,0,0)');
-				$('#right').css('z-index','1');
-			});
-		</script>
 		<script type="text/javascript">
-			$(window).load(function(){
-				var timepassval=0;
+			var runner;
+			function sliderfunction ()
+			{
+				var timepassval=1;
 				var currimg=2;
 				var previmg=1;
-				var runner=setInterval(function()
+				runner=setInterval(function()
 				{
 					if(Math.floor(timepassval)===0)
 					{
@@ -103,7 +79,21 @@
 					timepassval=(timepassval+0.1)%100;
 					$("#timepass").css('width',timepassval+'%');
 				},2);
+			};
+		</script>
+		<script>
+			// $(window).load(function(){$('#content').load('ajax\\contact.txt');});
+			$('#about').	click(function(){$('#content').	load('ajax\\about.txt');});
+			$('#contact').click(function(){$('#content').	load('ajax\\contact.txt');});
+			$('#home').		click(function()
+			{
+				clearInterval(runner);
+				$('#content').load('ajax\\home.txt');
+				sliderfunction();
 			});
+			$('#kidz').		click(function(){$('#content').	load('ajax\\kidz.txt');});
+			$('#toextra').click(function() {$('#extra').css('transform','translateX(-100%)'); });
+			$('#tomain').click(function() {$('#extra').css('transform','translateX(0%'); });
 		</script>
 	</body>
 </html>

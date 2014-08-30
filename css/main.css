@@ -1,115 +1,129 @@
 * {
-  overflow: hidden;
-  font-family: arial;
   border: none;
+  font-family: Arial;
   margin: 0;
   padding: 0; }
 
-div#right,
-div#left {
-  height: 100%;
+body {
+  overflow: hidden; }
+
+div#header {
+  border-top: 5px solid white;
   width: 100%;
-  position: absolute; }
+  position: fixed;
+  z-index: 1;
+  background: red;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25); }
+  div#header img {
+    margin: 10px;
+    float: left;
+    display: inline;
+    width: 50px; }
+  div#header h1 {
+    margin-top: 16px;
+    line-height: 50px;
+    display: inline-block; }
 
-div#left {
-  z-index: -1;
-  transform: translate3d(-10%, 0, 0); }
-
-div#top {
-  background-color: grey; }
-  div#top span {
-    margin-left: 10px;
-    line-height: 64px;
-    font-size: 32px; }
-    div#top span img {
-      float: left;
-      width: 50px; }
-  div#top ul {
-    float: right;
-    list-style: none; }
-    div#top ul li {
-      letter-spacing: 1px;
-      text-align: center;
-      width: 100px;
-      display: inline-block;
-      background: green;
-      padding: 5px 20px;
-      color: black;
-      cursor: pointer; }
-
-div#content {
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 5px 5px 0 0;
-  display: table;
+div#section {
   height: 100%;
-  margin: auto;
-  margin-top: 20px;
-  padding: 50px;
-  width: 80%; }
-  div#content div#contact {
+  width: 200%;
+  position: absolute; }
+  div#section div#extra,
+  div#section div#main {
+    float: left;
     height: 100%;
-    margin-top: 50px;
-    position: relative; }
-    div#content div#contact div div#row {
-      margin: 50px 0; }
-      div#content div#contact div div#row img {
-        border: 1px solid rgba(0, 0, 0, 0.25);
-        border-radius: 50px;
-        width: 100px;
-        height: 100px;
-        float: left; }
-    div#content div#contact div#row h3 {
-      padding-left: 10px;
-      line-height: 100px; }
-    div#content div#contact div#row p {
-      padding-left: 20px;
-      clear: both;
-      margin: 0; }
-    div#content div#contact > div {
-      width: 50%;
+    position: relative;
+    width: 50%; }
+    div#section div#extra button,
+    div#section div#main button {
+      cursor: pointer;
+      height: 50px;
+      width: 50px;
+      font-size: 50px;
+      line-height: 50px;
       position: absolute; }
-    div#content div#contact div#lefthalf {
-      top: 0;
-      left: 0px; }
-    div#content div#contact div#righthalf {
-      top: 0;
-      right: -50px;
-      border-left: 10px solid black;
-      padding-left: 50px; }
-
-div#bottom {
-  background: #248;
-  bottom: 0;
-  padding: 5px 0;
-  position: absolute;
-  width: 100%; }
-  div#bottom div {
-    display: table;
-    margin: auto; }
-    div#bottom div form {
-      padding: 5px;
-      background: red; }
-      div#bottom div form input[type="email"] {
-        width: 250px;
-        padding: 2px 0;
-        color: red; }
-      div#bottom div form input[type="submit"] {
-        padding: 2px 5px; }
-
-button#toleft,
-button#toright {
-  color: #fff;
-  background: #333; }
-
-button {
-  font-size: 60px;
-  position: absolute;
-  width: 60px;
-  line-height: 60px; }
-
-button#toleft {
-  bottom: 60px; }
-
-button#toright {
-  top: 60px;
-  right: 0; }
+  div#section div#extra {
+    transition: transform 0.25s;
+    z-index: 3;
+    margin-top: 85px;
+    background: yellow; }
+    div#section div#extra button {
+      right: 0;
+      top: 80px; }
+  div#section div#main {
+    position: relative; }
+    div#section div#main button {
+      left: 0;
+      bottom: 40px; }
+    div#section div#main div#nav ul {
+      border-top: 5px solid white;
+      z-index: 2;
+      right: 0;
+      position: absolute;
+      list-style: none; }
+      div#section div#main div#nav ul li {
+        color: black;
+        cursor: pointer;
+        display: inline-block;
+        letter-spacing: 1px;
+        padding: 5px 20px;
+        text-align: center;
+        width: 100px; }
+    div#section div#main div#footer {
+      background: orange;
+      bottom: 0;
+      position: absolute;
+      right: 0;
+      width: 100%; }
+      div#section div#main div#footer form {
+        display: table;
+        margin: auto;
+        padding: 10px 0; }
+        div#section div#main div#footer form input[type="email"] {
+          margin-left: 20px;
+          width: 250px;
+          padding: 2px 0;
+          color: red; }
+        div#section div#main div#footer form input[type="submit"] {
+          padding: 2px 5px; }
+    div#section div#main div#content {
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.25);
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 5px 5px 0 0;
+      display: table;
+      height: 100%;
+      margin: 100px auto 0;
+      padding: 20px;
+      width: 80%; }
+      div#section div#main div#content div#contact {
+        height: 100%;
+        position: relative; }
+        div#section div#main div#content div#contact h1 {
+          text-align: center; }
+        div#section div#main div#content div#contact > div {
+          margin-top: 50px;
+          width: 50%;
+          position: absolute; }
+        div#section div#main div#content div#contact div#lefthalf {
+          top: 0;
+          left: 0px; }
+        div#section div#main div#content div#contact div#righthalf {
+          top: 0;
+          right: -50px;
+          border-left: 10px solid black;
+          padding-left: 50px; }
+        div#section div#main div#content div#contact div div#row {
+          margin: 50px 0 0; }
+          div#section div#main div#content div#contact div div#row img {
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            width: 50px;
+            height: 50px;
+            float: left; }
+        div#section div#main div#content div#contact div#row h3 {
+          padding-left: 10px;
+          line-height: 50px; }
+        div#section div#main div#content div#contact div#row p {
+          padding-left: 10px;
+          clear: both;
+          margin-top: 5px; }
