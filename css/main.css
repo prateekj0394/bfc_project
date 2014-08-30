@@ -13,29 +13,38 @@ div#left {
 
 div#left {
   z-index: -1;
-  opacity: 0;
   transform: translate3d(-10%, 0, 0); }
 
 div#top {
-  margin: auto;
-  top: 0;
-  width: 100%; }
+  background-color: grey; }
+  div#top span {
+    margin-left: 10px;
+    line-height: 64px;
+    font-size: 32px; }
+    div#top span img {
+      float: left;
+      width: 50px; }
   div#top ul {
-    display: table;
-    list-style: none;
-    margin: auto; }
+    float: right;
+    list-style: none; }
     div#top ul li {
+      letter-spacing: 1px;
+      text-align: center;
+      width: 100px;
       display: inline-block;
-      /*margin: 0 -2px;*/
       background: green;
-      padding: 10px 20px;
+      padding: 5px 20px;
       color: black;
       cursor: pointer; }
 
 div#content {
-  height: 100%;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 5px 5px 0 0;
   display: table;
+  height: 100%;
   margin: auto;
+  margin-top: 20px;
+  padding: 50px;
   width: 80%; }
   div#content div#contact {
     height: 100%;
@@ -71,22 +80,36 @@ div#content {
 div#bottom {
   background: #248;
   bottom: 0;
-  padding: 10px 0;
+  padding: 5px 0;
   position: absolute;
   width: 100%; }
   div#bottom div {
     display: table;
     margin: auto; }
     div#bottom div form {
-      padding: 10px 100px;
+      padding: 5px;
       background: red; }
       div#bottom div form input[type="email"] {
+        width: 250px;
         padding: 2px 0;
         color: red; }
       div#bottom div form input[type="submit"] {
-        padding: 2px 0; }
+        padding: 2px 5px; }
 
 button#toleft,
 button#toright {
   color: #fff;
   background: #333; }
+
+button {
+  font-size: 60px;
+  position: absolute;
+  width: 60px;
+  line-height: 60px; }
+
+button#toleft {
+  bottom: 60px; }
+
+button#toright {
+  top: 60px;
+  right: 0; }
