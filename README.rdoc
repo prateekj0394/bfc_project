@@ -1,0 +1,7 @@
+to use scss files, do:
+1. install ruby
+2. install the gem `sass`
+3. in the `terminal/command prompt`, go to the project directory
+4. type in the command `sass --watch css`
+
+this will switch on the sass compiler, which will conitnuously look for any changes made to scss file.

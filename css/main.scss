@@ -1,0 +1,127 @@
+*
+{
+	overflow: hidden;
+	font-family: arial;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+div#right,
+div#left
+{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+div#left
+{
+	z-index: -1;
+	opacity: 0;
+	transform: translate3d(-10%, 0, 0);
+}
+
+div#top
+{
+	margin: auto;
+	top: 0;
+	width: 100%;
+	 ul
+	{
+		display: table;
+		list-style: none;
+		margin: auto;
+		 li
+		{
+			display: inline-block;
+			/*margin: 0 -2px;*/
+			background: green;
+			padding: 10px 20px;
+			color: black;
+			cursor: pointer;
+		}
+	}
+}
+
+div#content
+{
+	height: 100%;
+	display: table;
+	margin: auto;
+	width: 80%;
+
+	div#contact
+	{
+		height: 100%;
+		margin-top: 50px;
+		position: relative;
+
+		div div#row
+		{
+			margin: 50px 0;
+
+			img
+			{
+				border: 1px solid rgba(0,0,0,.25);
+				border-radius: 50px;
+				width: 100px;
+				height: 100px;
+				float: left;
+			}
+		}
+		div#row h3
+		{
+			padding-left:10px;
+			line-height: 100px;
+		}
+		div#row p
+		{
+			padding-left: 20px;
+			clear: both;
+			margin: 0;
+		}
+		> div
+		{
+			width: 50%;
+			position: absolute;
+		}
+		div#lefthalf{top: 0;left: 0px;}
+		div#righthalf{top: 0;right: -50px;border-left: 10px solid black;padding-left: 50px;}
+	}
+}
+
+div#bottom
+{
+	background: #248;
+	bottom: 0;
+	padding: 10px 0;
+	position: absolute;
+	width: 100%;
+	div
+	{
+		display: table;
+		margin: auto;
+		form
+		{
+			padding: 10px 100px;
+			background: red;
+			input[type="email"]
+			{
+				padding: 2px 0;
+				color: red;
+			}
+			input[type="submit"]
+			{
+				padding: 2px 0;
+			}
+		}
+	}
+}
+
+button#toleft,
+button#toright
+{
+	color: #fff;
+	background: #333;
+}

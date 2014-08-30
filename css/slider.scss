@@ -1,0 +1,24 @@
+$width: 400px;
+$height: ($width*9/16);
+img{width: $width;}
+div#slider
+{
+	height: $height;
+	width: $width;
+	position: relative;
+}
+div[id*="img"]
+{
+	transition:opacity 1s;
+	position: absolute;
+	opacity: 0;
+}
+div#img1{opacity: 1;}
+div#timepass
+{
+	background: rgba(0,0,0,0.25);
+	border-radius:0 5px 5px 0;
+	height: 5px;
+	position: absolute;
+	width: 0;
+}
