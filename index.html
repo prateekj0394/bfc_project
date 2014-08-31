@@ -8,32 +8,29 @@
 		<link rel="stylesheet" href="css/slider.css">
 		<script src="js/jquery11.js"></script>
 		<style type="text/css">
-		div#section
-		{
-			background:url('img/back.png') top center fixed;
-		}
+		div#section {background:url('img/back.png') top center fixed;}
+		div#extra {background:url('img/back_extra.jpg') center/100% 100% no-repeat;}
 		div#nav ul li	{background: url('img/tab.png')center/100% 100% no-repeat;}
-
 		</style>
 	</head>
 	<body>
 
-	<div id="header">
+	<div id="header"><!--header-->
 		<img src="img/logo.png" style=""><h1>BITS Firefox Community</h1><p style="clear:both" />
 	</div><!--header end-->
+	<div id="nav"><!--nav-->
+		<ul>
+			<li id="home">Home</li><!--
+	 --><li id="kidz">Kidzilla</li><!--
+	 --><li id="about">About Us</li><!--
+	 --><li id="contact">Contact Us</li>
+		</ul>
+	</div><!--nav end-->
 	<div id="section">
-		<div id="main">
-			<div id="nav">
-				<ul>
-					<li id="home">Home</li><!--
-			 --><li id="kidz">Kidzilla</li><!--
-			 --><li id="about">About Us</li><!--
-			 --><li id="contact">Contact Us</li>
-				</ul>
-			</div><!--nav end-->
-			<div id="content"></div><!--content end-->
-			<button id="toextra">&raquo;</button>
-			<div id="footer">
+		<div id="main"><!-- main-->
+			<div id="content"></div><!--content start and end-->
+			<button id="toextra">&laquo;</button>
+			<div id="footer"><!-- footer-->
 				<form>
 					<label>NEWSLETTER</label>
 					<input type="email" required>
@@ -41,24 +38,19 @@
 				</form>
 			</div><!--footer end-->
 		</div><!--main end-->
-		<div id="extra">
-			<h1>THIS IS THE DARK SIDE</h1>
-			<button id="tomain">&laquo;</button>
+		<div id="extra"><!-- extra-->
+			<h1>INITIATIVES BY <span>MOZILLA</span></h1>
+			<div id="one"></div>
+			<div id="two"><div><img src="img/webmaker.png"></div></div>
+			<div id="three"><div><img src='img/open_badges.png'></div></div>
+			<div id="four"></div>
+			<button id="tomain">&raquo;</button>
 		</div><!--extra end-->
 	</div><!--section end-->
 
 
 
-			<!--  -->
-
-		<!-- <div id="extra"> -->
-			<!--  -->
-
-
-
-
-
-		<script type="text/javascript">
+		<script type="text/javascript">//image slider
 			var runner;
 			function sliderfunction ()
 			{
@@ -76,24 +68,84 @@
 						if (currimg===4) {currimg=1};
 						if (previmg===0) {previmg=3};
 					}
-					timepassval=(timepassval+0.1)%100;
+					timepassval=(timepassval+1)%100;
 					$("#timepass").css('width',timepassval+'%');
-				},2);
+				},50);
 			};
-		</script>
+		</script> <!--image slider end-->
+
+		<!-- ajax calls -->
 		<script>
-			// $(window).load(function(){$('#content').load('ajax\\contact.txt');});
-			$('#about').	click(function(){$('#content').	load('ajax\\about.txt');});
-			$('#contact').click(function(){$('#content').	load('ajax\\contact.txt');});
+			// $(window).load(function(){$('#content').load('ajax/home.txt');$('#extra').css('transform','translateX(-100%)'); $('#nav').css('transform','translateX(-100%)');});
+			$(window).load(function(){$('#content').load('ajax/home.txt');sliderfunction();});
+			$('#contact').click(function(){$('#content').	load('ajax/contact.txt');});
+			$('#about').	click(function(){$('#content').	load('ajax/about.txt');});
+			$('#kidz').		click(function(){$('#content').	load('ajax/kidz.txt');});
 			$('#home').		click(function()
 			{
 				clearInterval(runner);
-				$('#content').load('ajax\\home.txt');
+				$('#content').load('ajax/home.txt');
 				sliderfunction();
 			});
-			$('#kidz').		click(function(){$('#content').	load('ajax\\kidz.txt');});
-			$('#toextra').click(function() {$('#extra').css('transform','translateX(-100%)'); });
-			$('#tomain').click(function() {$('#extra').css('transform','translateX(0%'); });
+		</script><!-- ajax calls end-->
+
+		<!-- navigation buttons -->
+		<script>
+			$('#toextra').click(function()
+			{
+				$('#extra').css('transform','translateX(-100%)');
+				$('#nav').css('transform','translateX(-100%)');
+			});
+			$('#tomain').click(function()
+			{
+				$('#extra').css('transform','translateX(0%');
+				$('#nav').css('transform','translateX(0%)');
+			});
+		</script><!-- navigation buttons end-->
+
+		<!-- good looks -->
+		<script>
+			$('#extra > div').hover(function()
+			{
+				$(this).css('box-shadow', '0 0 30px rgba(255,255,255,.5)');
+				$(this).css('transform', 'scale(1.0075)');
+			},function()
+			{
+				$(this).css('box-shadow', 'none');
+				$(this).css('transform', 'scale(1)');
+			});
+
+			
+			$('#extra > div').click(function(){})
+			$('#two').click(function()
+			{
+				window.open("https://webmaker.org/",'_blank');
+			});
+			$('#three').click(function()
+			{
+				window.open("http://www.openbadges.org/",'_blank');
+			});
+			// $('#extra > div').click(function()
+			// {
+			// 	$(this).hover(function()
+			// 	{
+			// 		$(this).css('box-shadow','none');
+			// 		$(this).css('transform','scale(1)');
+			// 	});
+			// 	$(this).css('background','url("img/back_extra.jpg") center/100% no-repeat');
+			// 	$(this).css('border-radius','0');
+			// 	$(this).css('hover','none');
+			// 	$(this).css('border','none');
+			// 	$(this).css('box-shadow','none');
+			// 	$(this).css('height','100%');
+			// 	$(this).css('left','-5%');
+			// 	$(this).css('position','absolute');
+			// 	$(this).css('top','0');
+			// 	$(this).css('width','100%');
+			// });
+		</script><!-- good looks end -->
+		<script>
+		$('#kidz, #about, #one, #four').click(function(){window.location='lost.html';});
 		</script>
 	</body>
 </html>
