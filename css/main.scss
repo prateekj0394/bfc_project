@@ -1,4 +1,4 @@
-$topBorder: 5px solid white;
+$topBorder: 3px solid white;
 *
 {
 	border: none;
@@ -12,39 +12,41 @@ body
 }
 div#header
 {
-	border-top: $topBorder;
-	width: 100%;
 	$logoSize: 50px;
+	background: linear-gradient( #26A7FF 30%, #006AB2 100%);
+	border-top: $topBorder;
+	box-shadow: 0 0 20px rgba(0,0,0,.75);
 	position: fixed;
-	z-index: 1;
-	background: red;
-	box-shadow: 0 0 5px rgba(0,0,0,0.25);
+	width: 100%;
+	z-index: 3;
 	img
 	{
-		margin: 10px;
-		float: left;
 		display: inline;
+		float: left;
+		margin: 10px;
 		width: $logoSize;
 	}
 	h1
 	{
-		margin-top: 16px;
-		line-height: $logoSize;
+		color: #222;
 		display: inline-block;
+		line-height: $logoSize;
+		margin-top: 16px;
+		text-shadow: 1px 1px 2px rgba(255,255,255,1);
 	}
 }
 div#nav
 {
-	background: black;
-	z-index: 3;
 	position: relative;
 	transition: transform .25s;
+	z-index: 4;
 	ul
 	{
+		top:0px;
 		border-top: $topBorder;
-		right: 0;
-		position: absolute;
 		list-style: none;
+		position: absolute;
+		right: 0;
 		li
 		{
 			color: black;
@@ -53,7 +55,7 @@ div#nav
 			letter-spacing: 1px;
 			padding: 5px 20px 10px;
 			text-align: center;
-			width: 100px;
+			width: 110px;
 		}
 	}
 }
@@ -61,8 +63,8 @@ div#nav
 div#section
 {
 	height: 100%;
-	width: 200%;
 	position: absolute;
+	width: 200%;
 	div#extra,
 	div#main
 	{
@@ -72,31 +74,32 @@ div#section
 		width: 50%;
 		button
 		{
-			right: 0;
-			top: 0px;
+			background: transparent;
 			cursor: pointer;
-			height: 50px;
-			width: 50px;
 			font-size: 50px;
+			height: 50px;
 			line-height: 50px;
 			position: absolute;
+			right: 0;
+			top: 0px;
+			width: 50px;
 		}
 	}
 	div#extra
 	{
+		margin-top: 80px;
 		position: relative;
-		transition: transform 0.25s;
-		z-index: 2;
-		margin-top: 82px;
 		text-align: center;
+		transition: transform 0.25s;
+		z-index: 1;
+		button{color: #ddd;}
 		h1
 		{
 			color: #eef;
-			margin-bottom: 20px;
+			margin: 20px 0;
 		}
 		> div
 		{
-			text-align: left;
 			border-radius: 5px;
 			border: 5px solid rgba(255,255,255,0.75);
 			cursor: pointer;
@@ -104,10 +107,15 @@ div#section
 			float: left;
 			height: 200px;
 			margin: 0 0 2% 5%;
+			text-align: left;
 			transition: height 1s,width .6s;
 			width: 40%;
-			z-index: 5;
-			div{width: 80%;margin: 40px auto 0;};
+			z-index: 2;
+			div
+			{
+				width: 80%;
+				margin: 40px auto 0;
+			}
 		}
 	}
 	div#main
@@ -140,9 +148,9 @@ div#section
 		}
 		div#content
 		{
-			box-shadow: 0 10px 50px rgba(0,0,0,.25);
 			background: rgba(255,255,255,0.25);
 			border-radius: 5px 5px 0 0;
+			box-shadow: 0 10px 50px rgba(0,0,0,.25);
 			display: table;
 			height: 100%;
 			margin: 100px auto 0;
@@ -171,11 +179,11 @@ div#section
 					margin: 50px 0 0;
 					img
 					{
-						border: 1px solid rgba(0,0,0,.25);
 						border-radius: $dia/2;
-						width: $dia;
-						height: $dia;
+						border: 1px solid rgba(0,0,0,.25);
 						float: left;
+						height: $dia;
+						width: $dia;
 					}
 				}
 				div#row h3
