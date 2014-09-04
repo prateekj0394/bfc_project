@@ -1,4 +1,5 @@
 $topBorder: 3px solid white;
+$slideTime: .4s ease-out;
 *
 {
 	border: none;
@@ -38,7 +39,7 @@ div#header
 div#nav
 {
 	position: relative;
-	transition: transform .25s;
+	transition: transform $slideTime;
 	z-index: 4;
 	ul
 	{
@@ -90,7 +91,7 @@ div#section
 		margin-top: 80px;
 		position: relative;
 		text-align: center;
-		transition: transform 0.25s;
+		transition: transform $slideTime;
 		z-index: 1;
 		button{color: #ddd;}
 		h1
@@ -100,6 +101,7 @@ div#section
 		}
 		> div
 		{
+			overflow: hidden;
 			border-radius: 5px;
 			border: 5px solid rgba(255,255,255,0.75);
 			cursor: pointer;
@@ -125,6 +127,7 @@ div#section
 		div#footer
 		{
 			background: orange;
+			box-shadow: 0 0 20px  rgba(0,0,0,0.5);
 			bottom: 0;
 			position: absolute;
 			right: 0;

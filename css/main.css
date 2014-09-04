@@ -28,7 +28,7 @@ div#header {
 
 div#nav {
   position: relative;
-  transition: transform .25s;
+  transition: transform 0.4s ease-out;
   z-index: 4; }
   div#nav ul {
     top: 0px;
@@ -70,7 +70,7 @@ div#section {
     margin-top: 80px;
     position: relative;
     text-align: center;
-    transition: transform 0.25s;
+    transition: transform 0.4s ease-out;
     z-index: 1; }
     div#section div#extra button {
       color: #ddd; }
@@ -78,6 +78,7 @@ div#section {
       color: #eef;
       margin: 20px 0; }
     div#section div#extra > div {
+      overflow: hidden;
       border-radius: 5px;
       border: 5px solid rgba(255, 255, 255, 0.75);
       cursor: pointer;
@@ -98,6 +99,7 @@ div#section {
       top: 82px; }
     div#section div#main div#footer {
       background: orange;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
       bottom: 0;
       position: absolute;
       right: 0;
